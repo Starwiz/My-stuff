@@ -7,7 +7,7 @@ chars = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I'
 current = []
 howmany = 1
 hfCookie = open('hfcookie', 'w')
-users = [1,2103,4066,255981]
+users = [1,2103,4066]
 used = []
 
 def randomgen():
